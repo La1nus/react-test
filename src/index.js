@@ -156,7 +156,7 @@ class Second extends React.Component {
 class SecondRow extends React.Component {
   render() {
     const items = this.props.blocks.map((block, i) => {
-      return <SecondItem block={block} />
+      return <SecondItem block={block} key={i}/>
     })
     return (
       <div className="second__row">{items}</div>
@@ -247,7 +247,6 @@ class ThirdItem extends React.Component {
   }
 
   onChange(type, e) {
-    console.log(e);
     switch (type) {
       case "input":
         this.setState(() => ({
